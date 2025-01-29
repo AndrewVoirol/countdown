@@ -1,0 +1,5 @@
+@tailwind base;
+
+.container {
+  @apply mx-auto flex h-full w-full;
+}
