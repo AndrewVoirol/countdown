@@ -14,6 +14,17 @@
     "react-dom": "^18.2.0",
     "tailwindcss": "^4.0.0",
     "autoprefixer": "^10.4.5",
-    "@shadcn/ui": "^0.8.0"
+    "@shadcn/ui": "^0.9.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@types/tailwindcss": "^4.0.0",
+    "@types/autoprefixer": "^10.4.5",
+    "@types/shadcnui": "^0.8.0"
+  },
+  "compilerOptions": {
+    "styledComponents": false
+  },
   }
 }

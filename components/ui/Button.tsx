@@ -1,25 +1,28 @@
 import * as React from "react"
-import * as LabelPrimitive from "@radix-ui/react-label"
+import { Slot } from "@radix-ui/react-slot"
+import { cva } from "class-variance-authority"
 
-const Button = React.forwardRef<React.ComponentProps<"button", {}>>(({
-  asChild,
-  children,
-  ...props
-}, ref) => {
-  const Label = LabelPrimitive.forwardRef<React.ComponentProps<typeof LabelPrimitive.Root, {}>>((props, ref) => {
-    return <LabelPrimitive.Root {...props} />
-  })
-  return (
-    <button
-      className={cn("bg-primary-foreground hover:bg-primary-foreground/50 text-primary-foreground/90 rounded-full")}
-      {...props}
-      ref={ref}
-    >
-      {children}
-      {Label}
-    </button>
-  )
-})
+import { cn } from "@/lib/utils"
+
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>, React.ComponentPropsWithRef<"button"> {}
+
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, children, ...props }, ref) => {
+    return (
+      <button
+        className={cn(
+          "inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible focus-ring disabled:cursor-not-allowed",
+          className
+        )}
+        ref={ref}
+        {...props}
+      >
+        {children}
+      </button>
+    )
+  }
+)
 Button.displayName = "Button"
 
 export { Button }
