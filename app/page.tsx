@@ -1,6 +1,6 @@
 import React from 'react';
-import '../styles/globals.css'
-import { Button } from '@/components/ui/Button'
+import { Button } from '@/components/ui/Button';
+import "@/styles/globals.css";
 export default function Home() {
   return (
     <div className='container'>
